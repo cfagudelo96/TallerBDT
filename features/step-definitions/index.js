@@ -36,6 +36,7 @@ defineSupportCode(({Given, When, Then}) => {
   When('I try to sign up', () => {
     var cajaSignUp = browser.element('.cajaSignUp');
     cajaSignUp.element('button=Registrarse').click();
+    browser.pause(1000);
   });
 
   Then('I expect to not be able to login', () => {
@@ -73,7 +74,7 @@ defineSupportCode(({Given, When, Then}) => {
     mailInput.click();
     mailInput.keys(email);
 
-    var passwordInput = cajaLogIn.element('input[name="password"]');
+    var passwordInput = cajaSignUp.element('input[name="password"]');
     passwordInput.click();
     passwordInput.keys(password);
 
@@ -91,8 +92,8 @@ defineSupportCode(({Given, When, Then}) => {
   });
 
   Then('I expect to see sweetalert with {string}', error => {
-    browser.waitForVisible('.text-muted.lead', 5000);
-    var alertText = browser.element('.text-muted.lead').getText();
+    browser.waitForVisible('.sweet-alert', 50000);
+    var alertText = browser.element('.text-muted.lead').element('div').getText();
     expect(alertText).to.include(error);
   });
 });

@@ -24,3 +24,15 @@ Scenario Outline: Sign up failed for already registered user
     Examples:
       | email                     | password        | error                                      |
       | testcfagudelo12@test.com  | testcfagudelo12 | existe un usuario registrado con el correo |
+
+Scenario Outline: Sign up succeeded
+
+  Given I go to losestudiantes home screen
+    When I open the login screen
+    And I fill the sign up with <email> and <password>
+    And I try to sign up
+    Then I expect to have loged in
+
+    Examples:
+      | email                      | password          |
+      | testcfagudelo124@test.com  | testcfagudelo1234 |

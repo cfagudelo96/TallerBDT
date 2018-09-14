@@ -1,3 +1,5 @@
+# ESTA MADRE NO FUNCIONA PORQUE A VECES SI A VECES NO APARECE UN OVERLAY DE TUTORIAL QUE ME JODE LOS TESTS
+
 Feature: Opening the help screen
 
   Scenario: As a user I want to be able to open the help screen from the side menu the first time I open the app
